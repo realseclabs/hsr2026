@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "src": "/events/hsr2026/?",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/events/hsr2026/(.*)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    }
+  ]
+}
