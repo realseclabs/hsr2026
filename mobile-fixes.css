@@ -1,4 +1,17 @@
 @media (max-width: 750px) {
+  .countdown-inner {
+    display: block !important;
+  }
+
+  .countdown {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100% !important;
+    max-width: none;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
   .site-header {
     height: auto;
     min-height: 86px;
@@ -42,6 +55,40 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
+  }
+
+  .icon-arrow {
+    display: block;
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    margin: 0;
+    vertical-align: middle;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .countdown {
+    width: min(100%, 410px);
+    gap: 10px;
+  }
+
+  .countdown > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .countdown strong {
+    font-size: clamp(27px, 8vw, 42px);
+    white-space: nowrap;
+  }
+
+  .countdown span {
+    white-space: nowrap;
+    font-size: clamp(8px, 2.2vw, 10px);
   }
 
   .site-header nav,
