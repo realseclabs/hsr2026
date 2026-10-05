@@ -1,0 +1,52 @@
+@media (max-width: 750px) {
+  .site-header {
+    height: auto;
+    min-height: 86px;
+    padding: 10px 0 14px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .site-header nav,
+  .site-header nav.is-open {
+    display: flex !important;
+    position: static;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+    padding: 10px 0 0;
+    border-top: 1px solid #d8cfbe;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .site-header nav a {
+    display: inline-block;
+    padding: 3px 0;
+    font-size: 11px;
+    border: 0;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .organizer-grid {
+    display: block !important;
+  }
+
+  .organizer-visual {
+    width: 100%;
+    min-height: 320px;
+    height: auto;
+    margin: 0;
+    padding: 40px 20px;
+  }
+
+  .organizer-copy {
+    width: 100%;
+    margin-top: 48px;
+  }
+}
