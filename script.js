@@ -54,7 +54,6 @@ function updateCountdown() {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.removeAttribute("aria-disabled");
-      link.querySelector("span").textContent = "↗";
       if (link.textContent.includes("Registration opens")) {
         link.childNodes[0].textContent = "Register now ";
       }
