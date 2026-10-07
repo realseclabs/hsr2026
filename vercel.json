@@ -1,6 +1,20 @@
 {
   "routes": [
     {
+      "src": "/",
+      "status": 308,
+      "headers": {
+        "Location": "/events/hsr2026"
+      }
+    },
+    {
+      "src": "/events/?",
+      "status": 308,
+      "headers": {
+        "Location": "/events/hsr2026"
+      }
+    },
+    {
       "src": "/events/hsr2026/?",
       "dest": "/index.html"
     },
