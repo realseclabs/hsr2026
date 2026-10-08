@@ -4,6 +4,7 @@ const eventStarts = new Date("2026-11-15T06:00:00+05:30");
 
 const countdownLabel = document.querySelector("#countdown-label");
 const countdownTitle = document.querySelector("#countdown-title");
+const registrationEyebrow = document.querySelector("#registration-eyebrow");
 const registrationStatus = document.querySelector("#registration-status");
 const registerLinks = document.querySelectorAll(".register-link");
 const countdownParts = {
@@ -46,6 +47,7 @@ function updateCountdown() {
   countdownParts.seconds.textContent = String(seconds).padStart(2, "0");
 
   if (registrationIsOpen) {
+    registrationEyebrow.textContent = "Registrations are now open";
     countdownLabel.textContent = "The run begins in";
     countdownTitle.innerHTML = "Your coast-to-coast<br><em>morning awaits.</em>";
     registrationStatus.innerHTML = "Registration is now open<br><strong>Limited slots available</strong>";
@@ -54,7 +56,7 @@ function updateCountdown() {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.removeAttribute("aria-disabled");
-      if (link.textContent.includes("Registration opens")) {
+      if (link.textContent.includes("Registration opens") || link.textContent.includes("Be the first")) {
         link.childNodes[0].textContent = "Register now ";
       }
     });
