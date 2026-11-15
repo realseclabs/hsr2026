@@ -32,6 +32,7 @@ navigation.querySelectorAll("a").forEach((link) => {
 
 function updateCountdown() {
   const now = new Date();
+  const eventIsDone = now >= eventStarts;
   const registrationIsOpen = now >= registrationOpens;
   const target = registrationIsOpen ? eventStarts : registrationOpens;
   const remaining = Math.max(0, target.getTime() - now.getTime());
@@ -46,8 +47,19 @@ function updateCountdown() {
   countdownParts.minutes.textContent = String(minutes).padStart(2, "0");
   countdownParts.seconds.textContent = String(seconds).padStart(2, "0");
 
-  if (registrationIsOpen) {
-    registrationEyebrow.textContent = "Registrations are now open";
+  if (eventIsDone) {
+    if (registrationStatus) {
+      registrationStatus.innerHTML = "Event Completed<br><strong>15 November 2026 · Thank you for running!</strong>";
+    }
+    registerLinks.forEach((link) => {
+      link.removeAttribute("href");
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+      link.setAttribute("aria-disabled", "true");
+      link.textContent = "Event Completed";
+    });
+  } else if (registrationIsOpen) {
+    if (registrationEyebrow) registrationEyebrow.textContent = "Registrations are now open";
     countdownLabel.textContent = "The run begins in";
     countdownTitle.innerHTML = "Your coast-to-coast<br><em>morning awaits.</em>";
     registrationStatus.innerHTML = "Registration is now open<br><strong>Limited slots available</strong>";
